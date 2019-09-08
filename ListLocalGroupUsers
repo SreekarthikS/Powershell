@@ -1,0 +1,9 @@
+#Create a file with a list of hosts
+$a = Get-Content "C:\Users\jeremiahp\Desktop\AdminAccess\Host.txt"
+#Creating a for loop to access each value in the list
+foreach ($i in $a)
+  { 
+    Start-Transcript -path "C:\Users\jeremiahp\Desktop\AdminAccess\output2.csv" -append
+    $i + "`n" + "===="; net localgroup "Remote Desktop Users"
+    Stop-Transcript 
+  }
